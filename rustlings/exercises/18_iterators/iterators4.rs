@@ -10,6 +10,17 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    if num <= 1 {
+        1
+    } else {
+        let mut ret = 1;
+        let _ = (1..=num).map(
+            |x| {
+                ret *= x;
+            }
+        ).collect::<Vec<_>>();
+        ret
+    }
 }
 
 fn main() {
